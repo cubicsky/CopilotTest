@@ -1,13 +1,17 @@
-function skillMembers() {
-  return {
-    restrict: 'E',
-    templateUrl: 'skill-members.html',
-    controller: 'SkillMembersController',
-    controllerAs: 'skillMembersCtrl',
-    bindToController: true,
-    scope: {
-      skill: '=',
-      members: '='
-    }
-  };
+function skillMember() {
+    return {
+        restrict: 'E',
+        replace: true,
+        templateUrl: 'views/directives/skill-members.html',
+        scope: {
+            members: '=',
+            skill: '=',
+            addMember: '&'
+        },
+        controller: ['$scope', function($scope) {
+            $scope.addMember = function(member) {
+                $scope.addMember({member: member});
+            };
+        }]
+    };
 }
