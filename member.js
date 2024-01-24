@@ -1,8 +1,8 @@
-function skillMember() {
+function skillsMember() {
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'views/directives/skill-members.html',
+        templateUrl: 'views/directives/skills-member.html',
         scope: {
             members: '=',
             skill: '=',
